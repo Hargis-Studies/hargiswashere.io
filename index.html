@@ -332,7 +332,14 @@
           <p>
             Working with upconversion nanoparticles, optical trapping, and temperature-gradient estimation. Lab Advisor: Bjorg Larson balarson@wm.edu
           </p>
-        </article>
+        <!-- Hidden content -->
+      <div class="extra-text" style="display: none; margin-top: 12px;">
+        Test
+      </div>
+      <button class="toggle-btn" style="margin-top: 10px; cursor: pointer; background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 12px;">
+        Find out more
+      </button>
+  </article>
 
         <article class="project">
           <div class="tag">Biomedical Optics / Ocular Straylight Quantification</div>
@@ -340,6 +347,15 @@
           <p>
             A project focused on modeling and comparing scatter behavior to quantify straylight in a structured way. Lab Advisor: Bjorg Larson balarson@wm.edu
           </p>
+          <!-- Hidden content -->
+      <div class="extra-text" style="display: none; margin-top: 12px;">
+        Test
+      </div>
+
+  <!-- Button to toggle -->
+      <button class="toggle-btn" style="margin-top: 10px; cursor: pointer; background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 12px;">
+        Find out more
+      </button>
         </article>
 
         <article class="project">
@@ -354,6 +370,15 @@
             <a href="Experimental_Procedure_Milk_lab.pdf" target="_blank" rel="noopener" class="secondary">Experimental Procedure</a>
             <a href="Milkprojectslopcode.py" target="_blank" rel="noopener" class="secondary">code</a>
           </div>
+          <!-- Hidden content -->
+      <div class="extra-text" style="display: none; margin-top: 12px;">
+        Test
+      </div>
+
+  <!-- Button to toggle -->
+      <button class="toggle-btn" style="margin-top: 10px; cursor: pointer; background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 12px;">
+        Find out more
+      </button>
         </article>
       </div>
     </section>
@@ -384,5 +409,20 @@
       Continue Exploring
     </footer>
   </div>
+<script>
+  document.querySelectorAll('.project').forEach(project => {
+    const btn = project.querySelector('.toggle-btn');
+    const extra = project.querySelector('.extra-text');
+    btn.addEventListener('click', () => {
+      if (extra.style.display === 'none') {
+        extra.style.display = 'block';
+        btn.textContent = 'Show less';
+      } else {
+        extra.style.display = 'none';
+        btn.textContent = 'Find out more';
+      }
+    });
+  });
+</script>
 </body>
 </html>
