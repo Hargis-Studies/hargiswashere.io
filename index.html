@@ -5,289 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Hargis | Research Projects & About Me</title>
   <meta name="description" content="John Hargis's research projects, interests, and book chamber." />
+
   <style>
-    :root {
-      --bg1: #ffe4e6;
-      --bg2: #fde68a;
-      --bg3: #c7d2fe;
-      --card: rgba(255, 255, 255, 0.78);
-      --card-border: rgba(255, 255, 255, 0.45);
-      --text: #1f2937;
-      --muted: #4b5563;
-      --accent: #6d28d9;
-      --accent2: #0f766e;
-      --shadow: 0 18px 50px rgba(17, 24, 39, 0.14);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: Consolas, "Courier New", monospace;
-      font-weight: bold
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.65), transparent 32%),
-        linear-gradient(135deg, var(--bg1), var(--bg2) 45%, var(--bg3));
-      min-height: 100vh;
-      line-height: 1.6;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #000;
+      background: #f5e7a1; /* yellow outer margin */
     }
 
     .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px 18px 40px;
+      max-width: 1000px;
+      margin: 1in auto; /* 1-inch margin effect */
+      background: #ffffff;
+      padding: 20px;
+      border: 1px solid #ccc;
     }
 
-    header.hero {
-      position: relative;
-      overflow: hidden;
-      background: var(--card);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--card-border);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 28px;
-      margin-bottom: 22px;
-    }
-
-    .topline {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(17,24,39,0.06);
-      color: var(--muted);
+    header, section {
+      margin-bottom: 25px;
     }
 
     h1 {
-      font-size: clamp(2.1rem, 4vw, 4rem);
-      line-height: 1.05;
-      margin: 6px 0 10px;
-      letter-spacing: -0.03em;
-    }
-
-    .subtitle {
-      max-width: 70ch;
-      font-size: 1.08rem;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      background: rgba(255,255,255,0.75);
-      border: 1px solid rgba(17,24,39,0.08);
-      padding: 9px 14px;
-      border-radius: 999px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
-    nav a:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(17,24,39,0.08);
-      background: white;
-    }
-
-    section.card {
-      background: var(--card);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 24px;
-      margin-bottom: 18px;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
 
     h2 {
-      margin: 0 0 14px;
-      font-size: 1.7rem;
-      letter-spacing: -0.02em;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    nav {
+      margin-top: 10px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 8px 0;
+    }
+
+    nav a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #0645ad;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .portrait {
-      margin: 0;
-      padding: 14px;
-      background: rgba(255,255,255,0.6);
-      border-radius: 22px;
-      border: 1px solid rgba(17,24,39,0.08);
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
     }
 
     .portrait img {
       width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px;
-      object-fit: cover;
-    }
-
-    .portrait figcaption {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    p {
-      margin: 0 0 12px;
-      font-size: 1.03rem;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 14px;
+      border: 1px solid #ccc;
     }
 
     .meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 13px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.68);
-      border: 1px solid rgba(17,24,39,0.08);
-      font-size: 0.95rem;
-    }
-
-    .projects {
-      display: grid;
-      gap: 14px;
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 0.9rem;
     }
 
     .project {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.68);
-      border: 1px solid rgba(17,24,39,0.08);
-    }
-
-    .project h3 {
-      margin: 0 0 8px;
-      font-size: 1.16rem;
-      line-height: 1.3;
-    }
-
-    .project p {
-      margin-bottom: 0;
-      color: var(--muted);
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin-bottom: 12px;
     }
 
     .tag {
-      display: inline-block;
-      margin-bottom: 10px;
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
     }
 
     .links a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #0645ad;
       text-decoration: none;
-      color: white;
-      background: rgba(128, 0, 128, 1);
-      padding: 10px 14px;
-      border-radius: 12px;
-      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.22);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .links a:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(15, 118, 110, 0.28);
+      text-decoration: underline;
     }
 
-    .links a.secondary {
-      background: rgba(255,255,255,0.68);
-      color: black;
-      border: 1px solid rgba(17,24,39,0.08);
-      box-shadow: none;
+    button.toggle-btn {
+      margin-top: 10px;
+      cursor: pointer;
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 6px 10px;
     }
 
     footer {
       text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-      padding: 14px 0 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 700px) {
       .about-grid {
         grid-template-columns: 1fr;
-      }
-
-      header.hero,
-      section.card {
-        padding: 18px;
-        border-radius: 20px;
-      }
-
-      h1 {
-        font-size: 2.15rem;
       }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header class="hero">
-      <div class="topline">
-        <div class="pill">Physics • Research • Random Side Quests</div>
-        <div class="pill">Site updated: 4/4/2026</div>
-      </div>
+
+    <header>
+      <div>Physics • Research • Random Side Quests</div>
+      <div>Site updated: 4/4/2026</div>
 
       <h1>John Hargis’s Academic Trail and Footprint</h1>
-      <p class="subtitle">
-        A small corner of the internet for research, and projects.
-      </p>
+      <p>A small corner of the internet for research, and projects.</p>
 
-      <nav aria-label="Primary">
+      <nav>
         <a href="#about">About me</a>
         <a href="#projects">Projects</a>
         <a href="#life">Where you would find me/Hobbies </a>
@@ -295,27 +146,25 @@
       </nav>
     </header>
 
-    <section class="card" id="about">
+    <section id="about">
       <h2>About me</h2>
+
       <div class="about-grid">
         <figure class="portrait">
           <img src="myself.jpg" alt="John Hargis portrait" width="300" />
-  
           <figcaption>Physics student at The College of William and Mary.</figcaption>
         </figure>
 
         <div>
+          <p>Hello there, my name is John Hargis, I am a physics student at The College of William and Mary.</p>
+
           <p>
-            Hello there, my name is John Hargis, I am a physics student at The College of William and Mary.
-          </p>
-          <p>
-            I am an avid optics enthusiast, and I enjoy solving problems involving light both on the board and in the lab. My areas of interest are Biomedical Optics, Imaging Physics, Microscopy, ML Applied Imaging, and Scattering Physics.  
-          </p>
-          <p>
-            Email: <a href="mailto:Jphargis@wm.edu">Jphargis@wm.edu</a>
+            I am an avid optics enthusiast, and I enjoy solving problems involving light both on the board and in the lab. My areas of interest are Biomedical Optics, Imaging Physics, Microscopy, ML Applied Imaging, and Scattering Physics.
           </p>
 
-          <div class="meta" aria-label="Quick facts">
+          <p>Email: <a href="mailto:Jphargis@wm.edu">Jphargis@wm.edu</a></p>
+
+          <div class="meta">
             <span>Undergraduate Class of 2027</span>
             <span>Optics Lover</span>
             <span>Experiment + Computation</span>
@@ -324,77 +173,63 @@
       </div>
     </section>
 
-    <section class="card" id="projects">
+    <section id="projects">
       <h2>My Projects</h2>
 
-      <div class="projects">
-        <article class="project">
-          <div class="tag">Optical Trapping / Thermal modeling</div>
-          <h3>Using UCNPs to Determine Optical Trap Temperature Gradients for 980 nm Gaussian Beams</h3>
-          <p>
-            Working with upconversion nanoparticles, optical trapping, and temperature-gradient estimation. Lab Advisor: Bjorg Larson balarson@wm.edu
-          </p>
-      <div class="extra-text" style="display: none; margin-top: 12px;">
-        <img src="tweeze.jpg" alt="John Hargis portrait" width="300" />
-      <p>In this project we plan to use the emission spectra of UCNPs to measure the temperature gradients of our optical trap. This will help us make more accurate stiffness trends when collecting data</p>
-      <p>as well as confirm our simulated lasers accuracy. </p>    
-      </div>
-      <button class="toggle-btn" style="margin-top: 10px; cursor: pointer; background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 12px;">
-        Find out more
-      </button>
-  </article>
+      <div class="project">
+        <div class="tag">Optical Trapping / Thermal modeling</div>
+        <h3>Using UCNPs to Determine Optical Trap Temperature Gradients for 980 nm Gaussian Beams</h3>
+        <p>
+          Working with upconversion nanoparticles, optical trapping, and temperature-gradient estimation. Lab Advisor: Bjorg Larson balarson@wm.edu
+        </p>
 
-        <article class="project">
-          <div class="tag">Biomedical Optics / Ocular Straylight Quantification</div>
-          <h3>Using theoretically predicted decay patterns of posterior subcapsular cataracts to estimate straylight metrics quantitatively with hydrogel comparison. </h3>
-          <p>
-            A project focused on modeling and comparing scatter behavior to quantify straylight in a structured way. Lab Advisor: Bjorg Larson balarson@wm.edu
-          </p>
-          <!-- Hidden content -->
-      <div class="extra-text" style="display: none; margin-top: 12px;">
-        <img src="gonio.jpg" alt="John Hargis portrait" width="300" />  <img src="PSF.jpg" alt="Point Spread Function" width="300" />
-        <p> This project focuses on quantifying a measured quantity in opthamology straylight. Diagnosing cataract severity for cataracts in the posterior pole and capsule proved to be difficult before the development of straylight. </p>
-       <p>While surgical intervention of these forms of cataracts proves to be reliable with only a 5% risk of capsular rupture, understanding the physical meaning of our measurements in medicine is a necessity. This study aims to  </p>
-      <p> Quantify these measurements by matching scattering geometries of phantom lenses having similar morphology, to simulated scattering geometries via comparing theoretical and experimental point spread functions(PSFs)</p>
-      
+        <div class="extra-text" style="display:none;">
+          <img src="tweeze.jpg" width="300" />
+          <p>In this project we plan to use the emission spectra of UCNPs to measure the temperature gradients of our optical trap.</p>
+          <p>as well as confirm our simulated lasers accuracy.</p>
+        </div>
+
+        <button class="toggle-btn">Find out more</button>
       </div>
 
-  <!-- Button to toggle -->
-      <button class="toggle-btn" style="margin-top: 10px; cursor: pointer; background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 12px;">
-        Find out more
-      </button>
-        </article>
+      <div class="project">
+        <div class="tag">Biomedical Optics / Ocular Straylight Quantification</div>
+        <h3>Using theoretically predicted decay patterns of posterior subcapsular cataracts to estimate straylight metrics quantitatively with hydrogel comparison.</h3>
+        <p>
+          A project focused on modeling and comparing scatter behavior to quantify straylight in a structured way. Lab Advisor: Bjorg Larson balarson@wm.edu
+        </p>
 
-        <article class="project">
-          <div class="tag">Scattering Physics / Mie Theory </div>
-          <h3>Modeling how light propagates through whole milk (Monte Carlo &amp; Mie theory) {Jan, 2025–Jun, 2025}</h3>
-          <p>
-            A study of scattering and propagation in a messy but very useful optical medium. Lab Advisors: Fernando Camelli, Robert Cressman.
-          </p>
+        <div class="extra-text" style="display:none;">
+          <img src="gonio.jpg" width="300" />
+          <img src="PSF.jpg" width="300" />
+          <p>This project focuses on quantifying a measured quantity in opthamology straylight.</p>
+        </div>
 
-          <div class="links">
-            <a href="Final_Project.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
-            <a href="Experimental_Procedure_Milk_lab.pdf" target="_blank" rel="noopener" class="secondary">Experimental Procedure</a>
-            <a href="Milkprojectslopcode.py" target="_blank" rel="noopener" class="secondary">code</a>
-          </div>
-          <!-- Hidden content -->
-      <div class="extra-text" style="display: none; margin-top: 12px;">
-        <img src="milk.jpg" alt="John Hargis portrait" width="300" />
-        <p>This study examined the reliability of light scattering theory in a turbid medium, specifically whole milk. The model simulated light propagation in a cube using Monte Carlo ray tracing and Mie theory. </p>
-       <p>The flux through each face of the cube was calculated and then compared with measured intensities from a whole milk scattering sample. The globules were assumed to be isotropic spheres, which allowed the use of the Henyey Greenstein phase function. The results suggest that Monte Carlo ray tracing,</p>
-      <p> together with the isotropic sphere approximation for milk, gives acceptable agreement with experimental observations, with a fitting uncertainty of approximately 8\%. The dominant experimental uncertainty arose from Fresnel reflection, along with additional inelastic scattering effects. This model was evaluated using a 650 nm laser.</p>
-      
+        <button class="toggle-btn">Find out more</button>
       </div>
 
-  <!-- Button to toggle -->
-      <button class="toggle-btn" style="margin-top: 10px; cursor: pointer; background: var(--accent); color: white; border: none; padding: 8px 14px; border-radius: 12px;">
-        Find out more
-      </button>
-        </article>
+      <div class="project">
+        <div class="tag">Scattering Physics / Mie Theory</div>
+        <h3>Modeling how light propagates through whole milk (Monte Carlo &amp; Mie theory) {Jan, 2025–Jun, 2025}</h3>
+        <p>
+          A study of scattering and propagation in a messy but very useful optical medium. Lab Advisors: Fernando Camelli, Robert Cressman.
+        </p>
+
+        <div class="links">
+          <a href="Final_Project.pdf">Paper (PDF)</a>
+          <a href="Experimental_Procedure_Milk_lab.pdf">Experimental Procedure</a>
+          <a href="Milkprojectslopcode.py">code</a>
+        </div>
+
+        <div class="extra-text" style="display:none;">
+          <img src="milk.jpg" width="300" />
+        </div>
+
+        <button class="toggle-btn">Find out more</button>
       </div>
     </section>
 
-    <section class="card" id="life">
+    <section id="life">
       <h2>Where Would You Find me In The Flesh</h2>
       <p>
         Running, Brazilian Jiu-Jitsu, playing with math, playing the piano, thinking for incredibly long amounts of time, and reading classic literature.
@@ -404,13 +239,12 @@
       </p>
     </section>
 
-    <section class="card" id="book-chamber">
+    <section id="book-chamber">
       <h2>Visit my Book Chamber</h2>
-      <p>
-        I write about the takeaways from the books I read.
-      </p>
+      <p>I write about the takeaways from the books I read.</p>
+
       <div class="links">
-        <a href="https://hargis-studies.github.io/Chambers-Shelf/" target="_blank" rel="noopener">
+        <a href="https://hargis-studies.github.io/Chambers-Shelf/" target="_blank">
           Visit the Book Chamber
         </a>
       </div>
@@ -419,11 +253,14 @@
     <footer>
       Continue Exploring
     </footer>
+
   </div>
+
 <script>
   document.querySelectorAll('.project').forEach(project => {
     const btn = project.querySelector('.toggle-btn');
     const extra = project.querySelector('.extra-text');
+
     btn.addEventListener('click', () => {
       if (extra.style.display === 'none') {
         extra.style.display = 'block';
@@ -435,5 +272,6 @@
     });
   });
 </script>
+
 </body>
 </html>
